@@ -26,16 +26,33 @@ const store = createStore((state = {count : 0} , action) =>{
 })
  
 //Action creator  - functions that return action objects
-const incrementCount = (payload = {}) => {
+// const incrementCount = (payload = {}) => {
+//     return {
+//         type : 'INCREMENT',
+//         incrementBy:typeof payload.incrementBy === 'number' ? payload.incrementBy : 1
+//     }
+// }
+
+//destructuring 
+
+const incrementCount = ({incrementBy = 1} = {}) => {
     return {
-        type : 'INCREMENT',
-        incrementBy:typeof payload.incrementBy === 'number' ? payload.incrementBy : 1
+        type : "INCREMENT",
+        incrementBy
     }
 }
-const decrementCount = (payload = {}) => {
+
+// const decrementCount = (payload = {}) => {
+//     return {
+//         type : "DECREMENT",
+//         decrementBy : typeof payload.decrementBy === "number" ? payload.decrementBy : 1
+//     }
+// }
+
+const decrementCount = ({decrementBy = 1} = {}) =>{
     return {
         type : "DECREMENT",
-        decrementBy : typeof payload.decrementBy === "number" ? payload.decrementBy : 1
+        decrementBy
     }
 }
 
