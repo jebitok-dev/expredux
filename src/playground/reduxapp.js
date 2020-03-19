@@ -85,3 +85,30 @@ store.dispatch(decrementCount())
 store.dispatch(decrementCount({decrementBy : 10}))
 
 store.dispatch(setCount({count : 150}));
+
+
+
+
+
+const car = {
+    model:"Fiesta",
+    manufacturer:"Ford",
+    full_name:function(){ //bound to obj itself ie car
+        return `${this.manufacturer} ${this.model}`
+    }
+}
+console.log(car.full_name());
+
+const car = {
+    model:"Fiesta",
+    manufacturer:"Ford",
+    full_name:() => { //bound to parent of car window obj
+        return `${this.manufacturer} ${this.model}`
+    }
+}
+console.log(car.full_name());
+
+
+const greeting = "hey";
+const arr = [...greeting];
+console.log(arr);
