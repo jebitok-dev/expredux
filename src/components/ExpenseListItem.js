@@ -1,9 +1,11 @@
 import React from "react"
-
-const ExpenseLIstItem = props=>{
+import { Link } from 'react-router-dom';
+const ExpenseListItem = props=>{
     return (
         <div>
-            <h3>{props.description}</h3>
+            <Link to= {`/edit/${props.id}`}>
+                <h3>{props.description}</h3>
+            </Link>
             <p>
                 {props.amount} - {props.createdAt};
             </p>
@@ -11,4 +13,4 @@ const ExpenseLIstItem = props=>{
     )
 }
 
-export default ExpenseLIstItem;
+export default ExpenseListItem;

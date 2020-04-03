@@ -10,6 +10,7 @@ const ExpenseList = (props) =>{
             {props.expenses.map((expense) =>{
                 return <ExpenseListItem 
                 key ={expense.id}
+                id = {expense.id}
                 description = {expense.description}
                 amount = {expense.amount}
                 createdAt = {expense.createdAt} 
@@ -19,7 +20,7 @@ const ExpenseList = (props) =>{
     );
 };
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = state =>{
     return {
         expenses : selectExpenses(state.expenses,state.filters)
     };
